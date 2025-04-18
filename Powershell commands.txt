@@ -1,0 +1,151 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\lenovo> cd desktop
+PS C:\Users\lenovo\desktop> cd projet_docker
+PS C:\Users\lenovo\desktop\projet_docker> docker compose up --build -d
+time="2025-04-18T21:25:52+02:00" level=warning msg="C:\\Users\\lenovo\\desktop\\projet_docker\\compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+[+] Building 10.7s (12/12) FINISHED                                                                docker:desktop-linux
+ => [app internal] load build definition from Dockerfile                                                           0.0s
+ => => transferring dockerfile: 574B                                                                               0.0s
+ => [app internal] load metadata for docker.io/library/alpine:3.17                                                 0.8s
+ => [app auth] library/alpine:pull token for registry-1.docker.io                                                  0.0s
+ => [app internal] load .dockerignore                                                                              0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [app 1/5] FROM docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483e  0.0s
+ => => resolve docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b  0.0s
+ => [app internal] load build context                                                                              0.0s
+ => => transferring context: 707B                                                                                  0.0s
+ => CACHED [app 2/5] RUN apk add --no-cache python3 py3-pip py3-virtualenv curl                                    0.0s
+ => CACHED [app 3/5] WORKDIR /app                                                                                  0.0s
+ => [app 4/5] COPY src/ /app                                                                                       0.0s
+ => [app 5/5] RUN python3 -m venv venv &&     . venv/bin/activate &&     pip install --no-cache-dir flask mysql-c  7.4s
+ => [app] exporting to image                                                                                       2.1s
+ => => exporting layers                                                                                            1.4s
+ => => exporting manifest sha256:8866ba17b6fa4b721bb945201c10d81e3bdace1e0b051ea44d2e2d9c2a1f820e                  0.0s
+ => => exporting config sha256:94d083d89c160ca5ee6af970fa6329cad273b882d2bf56e36698a0f2bc6c87d7                    0.0s
+ => => exporting attestation manifest sha256:e026b63a3c1473bb24b128943fc27e2d97bba2b4dd7a414d193bc330c332e133      0.1s
+ => => exporting manifest list sha256:c789165a37b0f7fe570d62242b5a695d303f021c88f404c232f1d340ca623fd2             0.0s
+ => => naming to docker.io/library/projet_docker-app:latest                                                        0.0s
+ => => unpacking to docker.io/library/projet_docker-app:latest                                                     0.5s
+ => [app] resolving provenance for metadata file                                                                   0.0s
+[+] Running 3/4
+ ✔ app                        Built                                                                                0.0s
+ ✔ Container mysql_container  Healthy                                                                             11.2s
+ - Container nginx_container  Starting                                                                            42.2s
+ ✔ Container app_container    Healthy                                                                             42.1s
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/run/desktop/mnt/host/c/Users/lenovo/Desktop/projet_docker/nginx/conf/default.conf" to rootfs at "/etc/nginx/conf.d/default.conf": create mountpoint for /etc/nginx/conf.d/default.conf mount: cannot create subdirectories in "/var/lib/docker/rootfs/overlayfs/01ad4483bb2bb1dce544cc521d426e04ea7315e314550be20db68575062d39f6/etc/nginx/conf.d/default.conf": not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+PS C:\Users\lenovo\desktop\projet_docker> docker compose up --build -d
+time="2025-04-18T21:29:27+02:00" level=warning msg="C:\\Users\\lenovo\\desktop\\projet_docker\\compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+[+] Building 0.8s (11/11) FINISHED                                                                 docker:desktop-linux
+ => [app internal] load build definition from Dockerfile                                                           0.0s
+ => => transferring dockerfile: 574B                                                                               0.0s
+ => [app internal] load metadata for docker.io/library/alpine:3.17                                                 0.5s
+ => [app internal] load .dockerignore                                                                              0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [app 1/5] FROM docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483e  0.1s
+ => => resolve docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b  0.1s
+ => [app internal] load build context                                                                              0.0s
+ => => transferring context: 55B                                                                                   0.0s
+ => CACHED [app 2/5] RUN apk add --no-cache python3 py3-pip py3-virtualenv curl                                    0.0s
+ => CACHED [app 3/5] WORKDIR /app                                                                                  0.0s
+ => CACHED [app 4/5] COPY src/ /app                                                                                0.0s
+ => CACHED [app 5/5] RUN python3 -m venv venv &&     . venv/bin/activate &&     pip install --no-cache-dir flask   0.0s
+ => [app] exporting to image                                                                                       0.1s
+ => => exporting layers                                                                                            0.0s
+ => => exporting manifest sha256:8866ba17b6fa4b721bb945201c10d81e3bdace1e0b051ea44d2e2d9c2a1f820e                  0.0s
+ => => exporting config sha256:94d083d89c160ca5ee6af970fa6329cad273b882d2bf56e36698a0f2bc6c87d7                    0.0s
+ => => exporting attestation manifest sha256:079f607168e09efdc7a72df344b7972cb366a43067d6027426c7827f60f71a88      0.0s
+ => => exporting manifest list sha256:46186ab11447391f81b0066260f0b96712905c33b3490f872ea84fdeb6f34e05             0.0s
+ => => naming to docker.io/library/projet_docker-app:latest                                                        0.0s
+ => => unpacking to docker.io/library/projet_docker-app:latest                                                     0.0s
+ => [app] resolving provenance for metadata file                                                                   0.0s
+[+] Running 4/4
+ ✔ app                        Built                                                                                0.0s
+ ✔ Container mysql_container  Healthy                                                                             11.5s
+ ✔ Container nginx_container  Started                                                                             42.6s
+ ✔ Container app_container    Healthy                                                                             42.3s
+PS C:\Users\lenovo\desktop\projet_docker> dir
+
+
+    Directory: C:\Users\lenovo\desktop\projet_docker
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         4/18/2025   9:25 PM                app
+d-----         4/18/2025   9:09 PM                mysql
+d-----         4/18/2025   9:29 PM                nginx
+-a----         4/18/2025   9:16 PM           1428 compose.yaml
+
+
+[+] Building 1.3s (12/12) FINISHED                                                                                                                                                                                      docker:desktop-linux
+ => [app internal] load build definition from Dockerfile                                                                                                                                                                                0.0s
+ => => transferring dockerfile: 574B                                                                                                                                                                                                    0.0s
+ => [app internal] load metadata for docker.io/library/alpine:3.17                                                                                                                                                                      0.9s
+ => [app auth] library/alpine:pull token for registry-1.docker.io                                                                                                                                                                       0.0s
+ => [app internal] load .dockerignore                                                                                                                                                                                                   0.0s
+ => => transferring context: 2B                                                                                                                                                                                                         0.0s
+ => [app 1/5] FROM docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989                                                                                                                0.1s
+ => => resolve docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989                                                                                                                    0.0s
+ => [app internal] load build context                                                                                                                                                                                                   0.0s
+ => => transferring context: 55B                                                                                                                                                                                                        0.0s
+ => CACHED [app 2/5] RUN apk add --no-cache python3 py3-pip py3-virtualenv curl                                                                                                                                                         0.0s
+ => CACHED [app 3/5] WORKDIR /app                                                                                                                                                                                                       0.0s
+ => CACHED [app 4/5] COPY src/ /app                                                                                                                                                                                                     0.0s
+ => CACHED [app 5/5] RUN python3 -m venv venv &&     . venv/bin/activate &&     pip install --no-cache-dir flask mysql-connector-python                                                                                                 0.0s
+ => [app] exporting to image                                                                                                                                                                                                            0.1s
+ => => exporting layers                                                                                                                                                                                                                 0.0s
+ => => exporting manifest sha256:8866ba17b6fa4b721bb945201c10d81e3bdace1e0b051ea44d2e2d9c2a1f820e                                                                                                                                       0.0s
+ => => exporting config sha256:94d083d89c160ca5ee6af970fa6329cad273b882d2bf56e36698a0f2bc6c87d7                                                                                                                                         0.0s
+ => => exporting attestation manifest sha256:40c1c470d88b053f4fb6247d7ef2e9ab2752cc26ed4ebfbb1fd5f01fed5ecce5                                                                                                                           0.0s
+ => => exporting manifest list sha256:f5c4a6d705194722cbf01895fe2668adba4aa4c7114eedc30ae20785acbf861d                                                                                                                                  0.0s
+ => => naming to docker.io/library/projet_docker-app:latest                                                                                                                                                                             0.0s
+ => => unpacking to docker.io/library/projet_docker-app:latest                                                                                                                                                                          0.0s
+ => [app] resolving provenance for metadata file                                                                                                                                                                                        0.0s
+[+] Running 4/4
+ ✔ app                        Built                                                                                                                                                                                                     0.0s
+ ✔ Container mysql_container  Healthy                                                                                                                                                                                                  12.3s
+ ✔ Container nginx_container  Started                                                                                                                                                                                                  43.5s
+ ✔ Container app_container    Healthy                                                                                                                                                                                                  42.6s
+PS C:\Users\lenovo\desktop\projet_docker> docker ps
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                    PORTS                           NAMES
+6af273aedb29   projet_docker-app   "sh -c '. venv/bin/a…"   3 minutes ago    Up 3 minutes (healthy)    4743/tcp                        app_container
+01ad4483bb2b   nginx:latest        "/docker-entrypoint.…"   26 minutes ago   Up 3 minutes              80/tcp, 0.0.0.0:5423->824/tcp   nginx_container
+e7fa4bced310   mysql:latest        "docker-entrypoint.s…"   26 minutes ago   Up 21 minutes (healthy)   3306/tcp, 33060/tcp             mysql_container
+PS C:\Users\lenovo\desktop\projet_docker> git init
+Initialized empty Git repository in C:/Users/lenovo/Desktop/projet_docker/.git/
+PS C:\Users\lenovo\desktop\projet_docker> git add .
+PS C:\Users\lenovo\desktop\projet_docker> git commit -m "Initial commit"
+[master (root-commit) 792c43c] Initial commit
+ 7 files changed, 155 insertions(+)
+ create mode 100644 app/Dockerfile
+ create mode 100644 app/src/app.py
+ create mode 100644 compose.yaml
+ create mode 100644 mysql/Dockerfile
+ create mode 100644 mysql/conf/init.sql
+ create mode 100644 nginx/Dockerfile
+ create mode 100644 nginx/conf/default.conf
+PS C:\Users\lenovo\desktop\projet_docker> git remote add origin https://github.com/Browndunel/Projet_Docker_Binome_6.git
+PS C:\Users\lenovo\desktop\projet_docker> git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Browndunel/Projet_Docker_Binome_6.git'
+PS C:\Users\lenovo\desktop\projet_docker> git branch
+* master
+PS C:\Users\lenovo\desktop\projet_docker> git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (15/15), 2.49 KiB | 510.00 KiB/s, done.
+Total 15 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Browndunel/Projet_Docker_Binome_6.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
